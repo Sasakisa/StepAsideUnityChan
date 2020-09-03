@@ -4,18 +4,22 @@ using UnityEngine;
 
 public class TrafficConeController : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
+    private GameObject unitychan;
+
+    // Use this for initialization
+    void Start () {
+        this.unitychan = GameObject.Find("unitychan");
+    }
 	
 	// Update is called once per frame
 	void Update () {
-		
-	}
 
-    void OnBecameInvisible()
-    {
-        Destroy(this.gameObject);
+        if ((this.unitychan.transform.position.z - 15) >= this.transform.position.z)
+        {
+            Destroy(this.gameObject);
+        }
+
     }
+
+
 }
